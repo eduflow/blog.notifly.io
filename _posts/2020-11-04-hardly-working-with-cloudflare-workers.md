@@ -90,7 +90,7 @@ A bunch of forum posts on community.cloudflare.com talk about this issue
 * **Only available on the Enterprise plan?** [This forum post][1] describes that setting the `Host` -header in workers is not possible. Followed up with [a later answer][2] that it's possible but only for Enterprise accounts.
  [This other post][3] says the same.
 - **Kenton Varda to the rescue** In response to [this post][4] Kenton Varda actually extends Cloudflare Workers with the `cf.resolveOverride`-flag on the `Request`-object,
-  which should allow the at least part of the reverse proxy setup.
+  which should allow at least part of the reverse proxy setup to work.
   Unfortunately, to explain the new feature the post just links to the top-level URL of the documentation for Cloudflare Workers – which currently doesn't
   describe how  `cf.resolveOverride` works and how to use it.
 - **The missing documentation** [This older post][5] seemingly cites documentation that no longer exists! :(  
