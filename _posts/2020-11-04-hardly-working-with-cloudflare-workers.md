@@ -37,7 +37,8 @@ This can be set up easily in Cloudflare by adding a couple of redirects in your 
 
 However, redirects from page rules are applied after any worker on the same URL. Since my worker's default action is to reverse proxy, the redirect page rule will never be hit.
 
-Annoyingly, this isn't clearly described in the docs and you'll have to find [this forum](https://community.cloudflare.com/t/cf-workers-and-rate-limiting-firewall-rules-bot-management/132164/3) post from the official Cloudflare forum to know that. The forum post notes that "security-related ones will run before" – but which ones are those? (All respect to Kenton Varda who wrote the post and is the main architect behind Cloudflare Workers. Cloudflare Workers *are* very very cool, but they are also a bit more quirky than I'd like at the moment)
+Annoyingly, this isn't clearly described in the docs and you'll have to find [this forum post](https://community.cloudflare.com/t/cf-workers-and-rate-limiting-firewall-rules-bot-management/132164/3) from the official Cloudflare forum to know that.
+The post notes that "_security-related ones will run before [workers]_" – but which ones are those? (All respect to Kenton Varda who wrote the post and is the main architect behind Cloudflare Workers. Cloudflare Workers *are* very very cool, but they are also a bit more quirky than I'd like at the moment)
 
 In order to preserve these redirects, I'll have to manually write them in the worker code (or relay the URLs that need to redirect to Cloudflare itself – which is basically the same amount of code). 
 
@@ -62,7 +63,7 @@ Back to the main task at hand – we're implementing a simple reverse proxy and 
 
 On closer inspection, the example from the Cloudflare docs seems to defy reasoning. The incoming request in the example must have the header `Host: google.yourdomain.com` in order for it to match the Google entry in `ORIGINS`. I was able to confirm as much by inspecting the incoming request in the Cloudflare worker debugger. That incoming request is then relayed directly to `www.google.com`. Let's try that ourselves:
 
- `curl -H 'Host: google.yourdomain.com' https://www.google.com`
+    curl -H 'Host: google.yourdomain.com' https://www.google.com
 
 The response we get is a 404 page (which makes sense since the host doesn't match). However, the Cloudflare worker doesn't get a 404 – it renders the familiar Google search frontpage. Something must be happening behind the scenes. That something is what I call "The Web Platform" part of Cloudflare Workers.
 
