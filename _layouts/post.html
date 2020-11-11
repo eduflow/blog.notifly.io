@@ -1,0 +1,32 @@
+---
+layout: base
+---
+
+<div class="blog-content">
+  <h1 class="post-heading"><a href="{{ post.url }}">{{ page.title }}</a></h1>
+  <p class="author">
+    <span class="date">{{ page.date | date:  "%-d %B, %Y" }}</span>
+    {% if page.author %} - <span class="author">{{ page.author }}</span>{% endif %}
+  </p>
+  <div class="content">
+    {{ page.content }}
+  </div>
+
+  <!-- Pagination links -->
+  <div class="pagination">
+    <div class="next">
+    {% if page.next %}
+      <a href="{{ page.next.url }}" class="next">Next: {{ page.next.title }}</a>
+    {% endif %}
+    </div>
+    <span class="page_number ">
+      <!-- Page {{ paginator.page }} of {{ paginator.total_pages }} -->
+    </span>
+    <div class="previous">
+      {% if page.previous %}
+        <a href="{{ page.previous.url }}" class="next">Previous: {{ page.previous.title }}</a>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
