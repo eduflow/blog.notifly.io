@@ -9,6 +9,8 @@ Working with Cloudflare Workers
 Hardly working with Cloudflare Workers
 -->
 
+_Note: The team behind Notifly also runs [Eduflow](https://www.eduflow.com) and [Peergrade](https://www.peergrade.io)._
+
 ## Introduction
 
 This is the story of me trying to replace a simple NGINX reverse proxy (plus some basic redirects) with a Cloudflare Worker.
