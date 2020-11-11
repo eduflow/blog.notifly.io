@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+    * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      margin: 0;
+      background-color: #f8f8f9;
+      font-family: Inter, sans-serif;
+      color: #565f6e;
+    }
+    .landing-nav-section {
+    padding: 48px 24px;
+    background-color: #f8f8f9;
+    }
+    .landing-nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    }
+    .landing-nav-links {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    padding-left: 0px;
+    list-style-type: none;
+    }
+    .landing-nav-link {
+    margin-left: 48px;
+    -webkit-transition: color 200ms ease;
+    transition: color 200ms ease;
+    color: #565f6e;
+    font-size: 18px;
+    line-height: 1.5em;
+    font-weight: 600;
+    text-decoration: none;
+    }
+    .landing-nav-link:hover {
+    color: #297f6e;
+    }
+    .landing-nav-link.primary {
+    color: #297f6e;
+    }
+    .landing-nav-link.primary:hover {
+    color: #194c42;
+    }
+    .landing-nav-link.pricing {
+    color: #fff;
+    }
+    .landing-logo {
+      float: left;
+    }
+    .blog-content {
+      margin-left: auto;
+      margin-right: auto;
+
+      max-width: 750px;
+    }
+    .blog-content h2 {
+      color: black;
+    }
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    @media screen and (max-width: 767px) {
+      .landing-nav-link {
+        margin-left: 32px;
+        font-size: 16px; 
+      }
+      .landing-logo {
+        max-height: 24px;
+      }
+    }
+    @media screen and (max-width: 479px) {
+      .landing-nav-links {
+        flex-wrap: wrap;
+      }
+      .landing-nav-links li {
+        margin-bottom: 25px;
+      }
+      .blog-content {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+
+    /* POST RELATED STYLING */
+    .post-heading a {
+      color: black;
+      text-decoration: none;
+    }
+    .post-heading a:hover {
+      text-decoration: underline;
+    }
+
+    /* FONT FACES */
+    @font-face {
+    font-family: 'Inter';
+    src: url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b05d6b0ef5ab8785a7_Inter-Bold.woff2') format('woff2'), url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b030fed6f483d98b87_Inter-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'Inter';
+    src: url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b0016860c6e395f6e3_Inter-BoldItalic.woff2') format('woff2'), url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b02ea57bd8374d1196_Inter-BoldItalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    }
+    @font-face {
+    font-family: 'Inter';
+    src: url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b2afff6549d09c1c36_Inter-Italic.woff2') format('woff2'), url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b01965c19cc3924581_Inter-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    }
+    @font-face {
+    font-family: 'Inter';
+    src: url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b201686017bb95f6e8_Inter-Medium.woff2') format('woff2'), url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b1a79f46a4766c09ee_Inter-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'Inter';
+    src: url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b146e6b8dd41d146e7_Inter-MediumItalic.woff2') format('woff2'), url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b11965c12a4e924585_Inter-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    }
+    @font-face {
+    font-family: 'Inter';
+    src: url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b2016860f3d295f6e6_Inter-Regular.woff2') format('woff2'), url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b146e6b8a33ad146e8_Inter-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'Inter';
+    src: url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b2afff65723a9c1c37_Inter-SemiBold.woff2') format('woff2'), url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b1df9df8897fed636e_Inter-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'Inter';
+    src: url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b1df9df88004ed6370_Inter-SemiBoldItalic.woff2') format('woff2'), url('https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6108b15d6b0e3e618785ba_Inter-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="landing-nav-section">
+      <div class="landing-nav">
+        <a href="https://www.notifly.io" style="display: block">
+          <img src="https://uploads-ssl.webflow.com/5e440128cef5628a7aad0ec3/5e6107e31965c10e3c9242b6_notifly-logo.svg" alt="Notifly logo" class="landing-logo"/>
+        </a>
+        <ul class="landing-nav-links">
+          <li><a href="https://www.notifly.io/pricing" class="landing-nav-link">Pricing</a></li>
+          <li><a href="https://docs.notifly.io/" target="_blank" class="landing-nav-link">Docs</a></li>
+          <li><a href="https://blog.notifly.io/" class="landing-nav-link">Blog</a></li>
+          <li><a href="https://app.notifly.io/account/login" target="_blank" class="landing-nav-link">Login</a></li>
+          <li><a href="https://app.notifly.io/account/signup" class="landing-nav-link primary">Get started</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="main-content">
+      {{ content }}
+    </div>
+
+    <!-- Cookiebot script -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="baab9c0f-b493-4cc3-8d02-b32d0880ccd6" type="text/javascript" async></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script data-cookieconsent="ignore">
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("consent", "default", {
+            ad_storage: "denied",
+            analytics_storage: "denied",
+            wait_for_update: 500
+        });
+        gtag("set", "ads_data_redaction", true);
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-69294034-4"></script>
+    <script type="text/plain" data-cookieconsent="statistics">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-69294034-4', {'anonymize_ip': false});
+    </script>
+  </body>
+</html>
