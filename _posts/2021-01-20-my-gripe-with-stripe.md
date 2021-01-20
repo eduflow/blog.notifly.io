@@ -42,7 +42,7 @@ Yes, initiating 3DSecure myself allows me to warn the user about it first. But a
 
 That was the original value proposition of Stripe. The frontend code we have in Peergrade is these **23 lines of code** and it does tiered, per-seat pricing:
 
-```html
+```jsx
 <StripeCheckout
   name="Peergrade"
   description={plan.name}
