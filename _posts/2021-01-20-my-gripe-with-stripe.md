@@ -2,7 +2,8 @@
 title: My gripe with Stripe
 author: Malthe Jørgensen
 ---
-_This post talks about [Eduflow](https://www.eduflow.com) and [Peergrade](https://www.peergrade.io) – our two main products._
+_This post talks about [Eduflow](https://www.eduflow.com) and [Peergrade](https://www.peergrade.io) – our two main products._  
+_Note that Stripe Checkout support for per-seat, tiered, and metered pricing was released on Jan 15th (of 2021)_ 🤦‍♂️
 
 Let's take a look at two fairly similar scenarios:
 
